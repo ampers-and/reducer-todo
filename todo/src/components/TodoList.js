@@ -15,7 +15,7 @@ export default function TodoForm() {
         setNewTodo(event.target.value);
     };
 
-    const handleSubmit = event => {
+    const handleSubmit = () => {
         dispatch({ type: 'ADD', payload:newTodo});
         setNewTodo('');
     }
@@ -42,6 +42,7 @@ export default function TodoForm() {
                     <input
                     type='text'
                     name='newtodo'
+                    placeholder='Add New Todo'
                     value={newTodo}
                     onChange={handleInput}
                     />
