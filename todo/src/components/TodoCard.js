@@ -1,4 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+
+//Styles
+const Card = styled.div`
+    width:200px;
+    height:150px;
+    background-color:lightgoldenrodyellow;
+    color:black;
+    margin:10px;
+    padding:10px;
+`;
 
 export default function TodoCard(props) {
 
@@ -10,9 +21,9 @@ export default function TodoCard(props) {
     }
 
     return(
-        <div className='todo'>
-            <h2 onClick={clickHandler}>{props.todo.item}</h2>
-            <p>{props.todo.timeCompleted}</p>
-        </div>
+        <Card>
+            <h4 onClick={clickHandler}>{props.todo.item}</h4>
+            <h6>{props.todo.timeCompleted}</h6>
+        </Card>
     )
 }

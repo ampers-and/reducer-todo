@@ -1,9 +1,32 @@
 import React, { useState, useReducer } from 'react';
+import styled from 'styled-components';
 
 import InitialState from '../reducers/initialState';
 import reducer from '../reducers/Reducer';
 
 import TodoCard from './TodoCard';
+
+//Styles
+const Button = styled.button`
+    width:fit-content;
+    background-color:salmon;
+    font-size:16px;
+    color:white;
+    border: solid 1px white;
+    border-radius:6px;
+    margin:10px;
+    padding:10px;
+`;
+
+const Input = styled.input`
+    width:200px;
+    padding:10px;
+    font-size:20px;
+    border: solid 2px salmon;
+    border-radius:6px;
+    color:salmon;
+`;
+
 
 export default function TodoForm() {
 
@@ -38,22 +61,25 @@ export default function TodoForm() {
                             toggleComplete={toggleComplete}/>
                     ))}
                 </div>
+
                 <div>
-                    <input
+                    <Input
                     type='text'
                     name='newtodo'
                     placeholder='Add New Todo'
                     value={newTodo}
                     onChange={handleInput}
                     />
-                    <button 
-                        onClick={handleSubmit}>
-                        Add Todo
-                    </button>
-                    <button 
-                        onClick={clearCompleted}>
-                        Clear Completed
-                    </button>
+                    <div>
+                        <Button 
+                            onClick={handleSubmit}>
+                            Add Todo
+                        </Button>
+                        <Button 
+                            onClick={clearCompleted}>
+                            Clear Completed
+                        </Button> 
+                    </div>
                 </div> 
         </div>
     )
