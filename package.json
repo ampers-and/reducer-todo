@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "moment": "^2.24.0",
+    "styled-components": "^4.3.2"
+  }
+}
