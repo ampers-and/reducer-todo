@@ -12,6 +12,7 @@ export default function TodoCard(props) {
     return(
         <div className='todo'>
             <h2 onClick={clickHandler}>{props.todo.item}</h2>
+            <p>{props.todo.timeCompleted}</p>
         </div>
     )
 }

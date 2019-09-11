@@ -1,6 +1,8 @@
 import React from 'react';
 import InitialState from './initialState';
 
+import moment from 'moment';
+
 
 const reducer = (state, action) => {
     console.log(state);
@@ -12,7 +14,8 @@ const reducer = (state, action) => {
                     {
                         item:action.payload,
                         completed:false,
-                        id:Date.now()
+                        id:Date.now(),
+                        timeCompleted:''
                     }
                 ]
             }
@@ -23,6 +26,7 @@ const reducer = (state, action) => {
                     state.todos.map( x => {
                         if(x.id === action.payload){
                             x.completed = !x.completed;
+                            x.timeCompleted = moment().format('MMMM Do YYYY, h:mm:ss a');
                         }
                         return x;
                     })
